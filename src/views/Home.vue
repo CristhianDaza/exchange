@@ -1,6 +1,7 @@
 <template>
   <div>
-    <PxAssetsTable :assets="assets" />
+    <ScaleLoader :loading="isLoading" :color="'#68d391'" />
+    <PxAssetsTable v-if="!isLoading" :assets="assets" />
   </div>
 </template>
 
@@ -12,12 +13,15 @@ export default {
   name: 'home',
   data() {
     return {
-      assets: []
+      assets: [],
+      isLoading: false
     }
   },
   created() {
+    this.isLoading = true
     api.getAssets()
       .then(assets => this.assets = assets)
+      .finally(() => this.isLoading = false)
   },
   components: {
     PxAssetsTable
