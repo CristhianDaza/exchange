@@ -4,9 +4,9 @@
       <nav class="flex items-center justify-between flex-wrap bg-green-400 p-6">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <PxIcon class="mr-2" />
-          <span class="font-semibold text-xl tracking-tight">
+          <router-link to="/" class="font-semibold text-xl tracking-tight">
             Exchange
-          </span>
+          </router-link>
         </div>
         <div class="hidden sm:block w-full blok flex-grow lg:flex lg:items-center lg:wauto">
           <div class="text-sm lg:flex-grow"></div>
